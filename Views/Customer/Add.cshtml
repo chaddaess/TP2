@@ -1,0 +1,25 @@
+﻿@model TP2_Entity.Models.Customer
+<h2>Add new customer</h2>
+<form asp-action="Add" class="form-control" method="post">
+	<input  type="hidden" asp-for="Id"/>
+	<label asp-for="Name" class="control-label"></label>
+	<input type="text" asp-for="Name" />
+	<label asp-for="MembershipTypeId" class="control-label"></label>
+	<select asp-for="MembershipTypeId" asp-items="@(new SelectList(ViewBag.MembershipTypeIds))">
+		<option value="">-- Select --</option>
+	</select>
+	<div class="form-group">
+		<input type="submit" value="Save" class="btn btn-primary" />
+	</div>
+
+
+
+</form>
+
+<style>
+	form{
+		display:flex !important;
+		flex-direction:row !important;
+		justify-content:space-evenly;
+	}
+</style>

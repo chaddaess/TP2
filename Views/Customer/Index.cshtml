@@ -1,0 +1,24 @@
+﻿@model List<TP2_Entity.Models.Customer >
+
+
+
+<a asp-action="Add"  class="btn btn-success">Add</a>
+
+<table class="table">
+<th>Name</th>
+<th>Discount</th>
+<th>Actions</th>
+
+@foreach(Customer cust in Model)
+{
+	<tr>
+		<td>@cust.Name</td>
+		<td>@cust.MembershipTypeId</td>
+		<td style="display:flex; flex-direction:row ;justify-content:center">
+			<a asp-action="Edit" asp-route-id="@cust.Id" class="btn btn-primary">Edit</a>
+			<a asp-action="Delete" asp-route-id="@cust.Id" class="btn btn-primary" onclick="return confirm('Are you sure you want to delete this?');">Delete</a>
+
+		</td>
+	</tr>
+}
+</table>

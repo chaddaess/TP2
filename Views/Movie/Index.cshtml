@@ -1,0 +1,13 @@
+﻿@model List<TP2_Entity.Models.Movie>
+
+
+<h2>
+	All Movies
+</h2>
+
+<ul>
+	@foreach(Movie movie in Model)
+	{
+		<li>@movie.Name</li>
+	}
+</ul>
